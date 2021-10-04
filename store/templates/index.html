@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>E-Mart</title>
+
 </head>
 <body>
-    <h1>Welcome To E-Mart!</h1>
+
+<!-- python code in markup (html) language-->
+{% for product in products %}
+    <table>
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.category.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.image}}</td>
+        </tr>
+    </table>
+{% endfor %}
+
+
 </body>
 </html>
