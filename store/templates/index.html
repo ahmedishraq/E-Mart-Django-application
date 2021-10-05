@@ -5,18 +5,34 @@
 {% block content %}
   <!-- python code in markup (html) language-->
     <div class="container-fluid mt-3">
-        <div class="row mx-auto">
-            {% for product in products %}
-            <div class="card mx-auto mb-3" style="width: 18rem;">
-                <img src="{{product.image.url}}" class="card-img-top" alt="Card Image">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text"><b>{{product.price}}</b></p>
-<!--                    <small>{{product.image.url}}</small>-->
-                    <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
-                </div>
-            </div>
-            {% endfor %}
+        <div class="row">
+        	<!-- Filter start -->
+
+        	<!-- Filter end -->
+        	<div class="col-lg-2 mx-auto">
+        		<div class="list-group">
+        			{% for category in categories %}
+		    			<a href="#" class="list-group-item list-group-item-action">{{category.name}}</a>
+        			{% endfor %}
+        		</div>
+        	</div>
+        	<!-- Products start -->
+        	<div class="col-lg-10 mx-auto" id="products">
+		    	<div class="row mx-auto">
+		        {% for product in products %}
+		            <div class="card mx-auto mb-3" style="width: 18rem;">
+		                <img src="{{product.image.url}}" class="card-img-top" alt="Card Image">
+		                <div class="card-body">
+		                    <h5 class="card-title">{{product.name}}</h5>
+		                    <p class="card-text"><b>{{product.price}} &#x09F3;</b></p>
+		                    <a href="#" class="btn btn-primary btn-sm">Add To Cart</a>
+		                </div>
+		        	</div>
+		        {% endfor %}
+		    	</div>
+        	</div>
+        	<!-- Products End -->
         </div>
     </div>
 {% endblock %}
+
