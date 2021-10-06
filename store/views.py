@@ -29,7 +29,7 @@ def index(request):
 
 # Customer data validation
 def validateCustomer(customer):
-    error_meassage = None
+    error_message = None
 
     if (not customer.first_name):
         error_message = "First Name Required!"
