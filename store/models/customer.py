@@ -20,6 +20,8 @@ class Customer(models.Model):
             return False
 
 
+
+
     # checking if email is unique for every customer
     def isExists(self):
         if Customer.objects.filter(email = self.email):
