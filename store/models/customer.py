@@ -12,6 +12,14 @@ class Customer(models.Model):
         self.save()
 
 
+    @staticmethod
+    def get_customer_by_email(email):
+        try:
+            return Customer.objects.get(email = email)
+        except:
+            return False
+
+
     # checking if email is unique for every customer
     def isExists(self):
         if Customer.objects.filter(email = self.email):
