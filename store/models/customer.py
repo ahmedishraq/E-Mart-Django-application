@@ -10,3 +10,10 @@ class Customer(models.Model):
     #function for save customer info
     def register(self):
         self.save()
+
+
+    # checking if email is unique for every customer
+    def isExists(self):
+        if Customer.objects.filter(email = self.email):
+            return True
+        return False
