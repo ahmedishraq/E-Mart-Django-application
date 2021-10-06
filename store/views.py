@@ -108,3 +108,8 @@ def signup(request):
     # for POST method
     else:
         return registerUser(request)
+
+# def for login page
+def login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
