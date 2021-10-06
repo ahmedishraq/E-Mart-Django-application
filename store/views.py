@@ -4,6 +4,7 @@ from django.contrib.auth.hashers import make_password, check_password
 from .models.product import Product
 from .models.category import Category
 from .models.customer import Customer
+from django.views import View
 
 
 
@@ -110,12 +111,11 @@ def signup(request):
     else:
         return registerUser(request)
 
-
-# def for login page
-def login(request):
-    if request.method == 'GET':
+# class for login(handle GET and POST request)
+class Login(View):
+    def get(self, request):
         return render(request, 'login.html')
-    else:
+    def post(self, request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         customer = Customer.get_customer_by_email(email)
@@ -129,5 +129,6 @@ def login(request):
                 return render(request, 'login.html', {'error' : error_message})
         else:
             error_message = "Email or Password invalid !!"
-            return render(request, 'login.html', {'error' : error_message})
+            return render(request, 'login.html', {'error': error_message})
+
 
