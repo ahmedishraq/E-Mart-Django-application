@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.hashers import make_password, check_password
 from .models.product import Product
 from .models.category import Category
 from .models.customer import Customer
@@ -77,6 +78,9 @@ def signup(request):
 
 
         if (not error_message):
+            # Hashing the customer password
+            customer.password = make_password(customer.password)
+
             # appling Customer class register method for register and save
             customer.register()
             return redirect('homepage')
