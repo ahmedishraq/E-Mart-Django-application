@@ -26,4 +26,10 @@ def index(request):
 
 # def for signup page
 def signup(request):
-    return render(request, 'signup.html')
+    if request.method == 'GET':
+        return render(request, 'signup.html')
+    else:
+        return HttpResponse('Received Post Request')
+
+        # to get the each input filed data and show in another page
+        #return HttpResponse(request.POST.get('email'))
