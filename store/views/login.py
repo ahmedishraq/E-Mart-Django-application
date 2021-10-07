@@ -18,6 +18,10 @@ class Login(View):
         if customer:
             flag = check_password(password, customer.password)
             if flag:
+                #Saving a customer for session
+                request.session['customer_id'] = customer.id
+                request.session['customer_email'] = customer.email
+                #redirect to next page
                 return redirect('homepage')
             else:
                 error_message = "Email or Password invalid !!"

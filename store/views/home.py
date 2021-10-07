@@ -22,6 +22,9 @@ def index(request):
     data['products'] = products
     data['categories'] = categories
 
+    #printing in terminal to check the session of the customer's email address
+    print("you are: ", request.session.get('customer_email'))
+
     # return render (request, 'orders/order.html')
     return render(request, 'index.html', data)
 
