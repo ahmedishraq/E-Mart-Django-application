@@ -19,8 +19,7 @@ class Login(View):
             flag = check_password(password, customer.password)
             if flag:
                 #Saving a customer for session
-                request.session['customer_id'] = customer.id
-                request.session['customer_email'] = customer.email
+                request.session['customer'] = customer.id
                 #redirect to next page
                 return redirect('homepage')
             else:
