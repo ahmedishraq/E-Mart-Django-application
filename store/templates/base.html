@@ -29,6 +29,9 @@
                 </ul>
 
                 <ul class="navbar-nav dflex">
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/cart">Cart</a>
+                    </li>
                     {% if request.session.customer %}
                         <!-- <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/cart">Cart</a>
@@ -40,9 +43,6 @@
                             <a class="nav-link" aria-current="page" href="/logout">Logout</a>
                         </li>
                     {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/cart">Cart</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/signup">Signup</a>
                         </li>
