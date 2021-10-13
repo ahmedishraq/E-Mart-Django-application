@@ -25,3 +25,4 @@ class Order(models.Model):
             .objects\
             .filter(customer = customer_id)\
             .order_by('-date')
+            # .order_by('-date) makes the last item in the top of the list
