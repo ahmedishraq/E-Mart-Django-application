@@ -28,5 +28,5 @@ class CheckOut(View):
 
         # clear the cart after checkout
         request.session['cart'] = {}
-        
+
         return redirect('cart')
