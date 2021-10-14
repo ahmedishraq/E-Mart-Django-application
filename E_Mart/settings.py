@@ -23,9 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n(c2kpctirtc&13-!pxq+=#l02s31#yrrt357xw8(e5vl&)jk!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# changing this into "False" for hosting in heroku
+# Default --> DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# changing this into "[127.0.0.1, e--mart.com] for hosting in heroku"
+# Default --> ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '']
 
 
 # Application definition
@@ -42,6 +46,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # added this middleware for hosting the site in heroku
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
