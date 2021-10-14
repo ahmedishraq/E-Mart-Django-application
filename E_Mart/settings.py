@@ -29,7 +29,8 @@ DEBUG = False
 
 # changing this into "[127.0.0.1, e--mart.com] for hosting in heroku"
 # Default --> ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['127.0.0.1', 'e--mart.herokuapp.com']
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'e--mart.herokuapp.com']
 
 
 # Application definition
@@ -125,12 +126,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR
+#STATIC_ROOT = BASE_DIR
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#MEDIA_URL = "/image/download/"
-#MEDIA_ROOT = BASE_DIR
+MEDIA_URL = "/image/download/"
+MEDIA_ROOT = BASE_DIR
