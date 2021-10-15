@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,12 +25,12 @@ SECRET_KEY = 'django-insecure-n(c2kpctirtc&13-!pxq+=#l02s31#yrrt357xw8(e5vl&)jk!
 # SECURITY WARNING: don't run with debug turned on in production!
 # changing this into "False" for hosting in heroku
 # Default --> DEBUG = True
-DEBUG = False
+DEBUG = True
 
 # changing this into "[127.0.0.1, e--mart.com] for hosting in heroku"
 # Default --> ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['*', 'e--mart.herokuapp.com']
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['*', 'e--mart.herokuapp.com']
 
 
 # Application definition
@@ -126,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
