@@ -29,8 +29,8 @@ DEBUG = True
 
 # changing this into "[127.0.0.1, e--mart.com] for hosting in heroku"
 # Default --> ALLOWED_HOSTS = []
-ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = ['*', 'e--mart.herokuapp.com']
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'e--mart.herokuapp.com']
 
 
 # Application definition
